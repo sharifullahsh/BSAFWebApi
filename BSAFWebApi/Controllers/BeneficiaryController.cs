@@ -47,7 +47,7 @@ namespace BSAFWebApi.Controllers
                     {
                         var beneficiary = new Beneficiary
                         {
-                            GUID = Guid.NewGuid(),
+                            GUID = model.GUID,
                             ScreeningDate = model.ScreeningDate,
                             ProvinceBCP = model.ProvinceBCP,
                             BorderPoint = model.BorderPoint,
@@ -105,12 +105,11 @@ namespace BSAFWebApi.Controllers
                             DoHaveSecureLivelihood = model.DoHaveSecureLivelihood,
                             DidChildrenGoToSchoole = model.DidChildrenGoToSchoole,
                             NumChildrenAttendedSchoole = model.NumChildrenAttendedSchoole,
-                            //TODO: add user information from db
                             InsertedBy = model.InsertedBy,
                             InsertedDate = model.InsertedDate,
+                            IsSubmitted = true,
                             IsCardIssued = model.IsCardIssued,
-                            //END TODO
-                            IsActive = true
+                            IsActive = model.IsActive,
                         };
                         db.Beneficiaries.Add(beneficiary);
                         db.SaveChanges();

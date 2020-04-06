@@ -130,8 +130,11 @@ namespace BSAF.Models
 
         public DateTime? LastUpdatedDate { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool IsSubmitted { get; set; }
 
         public bool IsCardIssued { get; set; }
+
+        public bool IsActive { get; set; }
+
     }
 }

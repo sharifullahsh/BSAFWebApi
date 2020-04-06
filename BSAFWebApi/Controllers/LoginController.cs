@@ -90,34 +90,32 @@ namespace BSAFWebApi.Controllers
             return tokenHandler.WriteToken(token);
         }
 
-        private async Task<bool>  AuthenticateUser(ApplicationUser login, string password)
-        {
-            var user = await _userManager.FindByNameAsync(login.UserName);
+        //private async Task<bool>  AuthenticateUser(ApplicationUser login, string password)
+        //{
+        //    var user = await _userManager.FindByNameAsync(login.UserName);
             
          
-            var result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
-            if (result.Succeeded)
-            {
-                return true;
-            }
-            return false;
-        }
+        //    var result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
+        //    if (result.Succeeded)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
         [HttpPost("register")]
-        [AllowAnonymous]
-        public  async Task<bool>  CreateuserAsync([FromBody] UserRegistration model)
+        public  async Task<IActionResult>  CreateuserAsync([FromBody] UserRegistration model)
         {
             var result = await _userManager.CreateAsync(
             new ApplicationUser()
             {
-                UserName = model.UserName,
-                Email = model.Email
+                UserName = model.UserName
             }, model.Password
             );
             if (result.Succeeded)
             {
-                return true;
+                return Ok();
             }
-            return false;
+            return BadRequest(result.Errors.ToString());
         }
      
     }
