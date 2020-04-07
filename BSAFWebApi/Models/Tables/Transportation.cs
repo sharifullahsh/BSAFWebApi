@@ -1,5 +1,5 @@
 namespace BSAF.Models
-{    public partial class Transportation
+{    public class Transportation
     {
         public int ID { get; set; }
 

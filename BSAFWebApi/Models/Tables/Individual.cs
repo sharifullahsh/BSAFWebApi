@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BSAF.Models
 {
 
-    public partial class Individual
+    public class Individual
     {
         [Key]
         public int IndividualID { get; set; }

@@ -2,10 +2,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BSAF.Models
 {
 
-
-
-
-    public partial class LivelihoodEmpNeed
+    public class LivelihoodEmpNeed
     {
         public int ID { get; set; }
 

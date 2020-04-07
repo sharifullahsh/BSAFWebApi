@@ -1,8 +1,7 @@
 namespace BSAF.Models
 {
 
-
-    public partial class Province
+    public class Province
     {
         public int ProvinceId { get; set; }
 

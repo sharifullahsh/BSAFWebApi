@@ -2,10 +2,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BSAF.Models
 {
 
-
-
-
-    public partial class NeedTool
+    public class NeedTool
     {
         public int ID { get; set; }
 

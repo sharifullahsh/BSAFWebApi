@@ -2,10 +2,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BSAF.Models
 {
 
-
-
-
-    public partial class HostCountryProvince
+    public class HostCountryProvince
     {
         [Key]
         public int ProvinceId { get; set; }

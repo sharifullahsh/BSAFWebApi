@@ -3,7 +3,7 @@ using System;
 namespace BSAF.Models
 {
 
-    public partial class PostArrivalNeed
+    public class PostArrivalNeed
     {
         public int ID { get; set; }
 

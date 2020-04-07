@@ -1,7 +1,7 @@
 namespace BSAF.Models
 {
 
-    public partial class District
+    public class District
     {
         public int DistrictId { get; set; }
 

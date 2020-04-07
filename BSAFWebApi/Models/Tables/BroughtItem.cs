@@ -1,8 +1,7 @@
 namespace BSAF.Models
 {
 
-
-    public partial class BroughtItem
+    public class BroughtItem
     {
         public int ID { get; set; }
 
