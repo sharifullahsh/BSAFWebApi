@@ -1,5 +1,6 @@
 ﻿using BSAF.Models;
 using BSAFWebApi.Models;
+using BSAFWebApi.Models.Identity;
 using BSAFWebApi.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -20,15 +21,15 @@ namespace BSAFWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class AuthController : ControllerBase
     {
         private readonly IConfiguration _config;
-        private UserManager<ApplicationUser> _userManager = null;
-        private SignInManager<ApplicationUser> _signInManager = null;
-        BWDbContext db = null;
+        private UserManager<User> _userManager = null;
+        private SignInManager<User> _signInManager = null;
+        DataContext db = null;
 
-        public LoginController(IConfiguration config, UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager, BWDbContext context)
+        public AuthController(IConfiguration config, UserManager<User> userManager,
+        SignInManager<User> signInManager, DataContext context)
         {
             _config = config;
             _userManager = userManager;
@@ -63,7 +64,7 @@ namespace BSAFWebApi.Controllers
             return Unauthorized();
         }
         [NonAction]
-        private async Task<string> GenerateJwtToken(ApplicationUser user)
+        private async Task<string> GenerateJwtToken(User user)
         {
             var claims = new[]
             {
@@ -102,21 +103,6 @@ namespace BSAFWebApi.Controllers
         //    }
         //    return false;
         //}
-        [HttpPost("register")]
-        public  async Task<IActionResult>  CreateuserAsync([FromBody] UserRegistration model)
-        {
-            var result = await _userManager.CreateAsync(
-            new ApplicationUser()
-            {
-                UserName = model.UserName
-            }, model.Password
-            );
-            if (result.Succeeded)
-            {
-                return Ok();
-            }
-            return BadRequest(result.Errors.ToString());
-        }
      
     }
 }

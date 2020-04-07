@@ -16,8 +16,8 @@ namespace BSAFWebApi.Controllers
    // [AllowAnonymous]
     public class BeneficiaryController : ControllerBase
     {
-        BWDbContext db = null;
-        public BeneficiaryController(BWDbContext context)
+        DataContext db = null;
+        public BeneficiaryController(DataContext context)
         {
             db = context;
         }

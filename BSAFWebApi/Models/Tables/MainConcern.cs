@@ -13,5 +13,8 @@ namespace BSAF.Models
         public string ConcernCode { get; set; }
 
         public string Other { get; set; }
+
+        public virtual Beneficiary Beneficiary { get; set; }
+
     }
 }

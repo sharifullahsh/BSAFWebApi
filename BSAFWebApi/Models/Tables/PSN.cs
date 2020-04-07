@@ -14,5 +14,8 @@ namespace BSAF.Models
         public string PSNCode { get; set; }
 
         public string PSNOther { get; set; }
+
+        public virtual Beneficiary Beneficiary { get; set; }
+
     }
 }

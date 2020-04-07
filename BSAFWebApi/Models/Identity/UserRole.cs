@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BSAFWebApi.Models
+namespace BSAFWebApi.Models.Identity
 {
-    public class ApplicationUser : IdentityUser
+    public class UserRole:IdentityUserRole<int>
     {
-        public string StationCode { get; set; }
+        public virtual User User { get; set; }
+        public virtual Role Role { get; set; }
+
     }
 }

@@ -13,5 +13,8 @@ namespace BSAF.Models
         public string NeedCode { get; set; }
 
         public int BeneficiaryID { get; set; }
+
+        public virtual Beneficiary Beneficiary { get; set; }
+
     }
 }

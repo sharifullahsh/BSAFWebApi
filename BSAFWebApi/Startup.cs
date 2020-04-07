@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BSAFWebApi.Data;
 using BSAFWebApi.Models;
+using BSAFWebApi.Models.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -36,19 +38,20 @@ namespace BSAFWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BWDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
-            IdentityBuilder builder = services.AddIdentityCore<ApplicationUser>(opt => {
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
+            IdentityBuilder builder = services.AddIdentityCore<User>(opt => {
                 opt.Password.RequireDigit = false;
                 opt.Password.RequiredLength = 1;
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireLowercase = false;
-                
             });
 
-            builder = new IdentityBuilder(builder.UserType, builder.Services);
-            builder.AddEntityFrameworkStores<BWDbContext>();
-            builder.AddSignInManager<SignInManager<ApplicationUser>>();
+            builder = new IdentityBuilder(builder.UserType, typeof(Role),builder.Services);
+            builder.AddEntityFrameworkStores<DataContext>();
+            builder.AddRoleValidator<RoleValidator<Role>>();
+            builder.AddRoleManager<RoleManager<Role>>();
+            builder.AddSignInManager<SignInManager<User>>();
             builder.AddDefaultTokenProviders();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -78,6 +81,7 @@ namespace BSAFWebApi
                       Newtonsoft.Json.ReferenceLoopHandling.Ignore;
               });
             services.AddCors();
+            services.AddTransient<Seed>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
