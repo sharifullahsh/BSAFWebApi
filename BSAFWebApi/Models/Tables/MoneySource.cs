@@ -1,6 +1,6 @@
 namespace BSAF.Models
 {
-     public partial class MoneySource
+     public class MoneySource
     {
         public int ID { get; set; }
 

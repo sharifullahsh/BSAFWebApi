@@ -2,9 +2,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BSAF.Models
 {
 
-
-
-    public partial class LookupType
+    public class LookupType
     {
         [Key]
         public int LookupId { get; set; }

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BSAF.Models
 {
 
-    public partial class BorderCrossingPoint
+    public class BorderCrossingPoint
     {
         [Key]
         public int BCPId { get; set; }

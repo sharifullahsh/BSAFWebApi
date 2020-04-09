@@ -3,8 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BSAF.Models
 {
 
-
-    public partial class BenefitedFromOrg
+    public class BenefitedFromOrg
     {
         public int ID { get; set; }
 

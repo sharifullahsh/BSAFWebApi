@@ -6,6 +6,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
+<<<<<<< HEAD
     <_PublishTargetUrl>D:\CBRR related\BSAFWebAPIpublished</_PublishTargetUrl>
+=======
+    <_PublishTargetUrl>D:\CBRR\BSAFWebAPIPublish</_PublishTargetUrl>
+>>>>>>> fea4fd11c2bd19a42215ee3a13c3595a36b648ba
   </PropertyGroup>
 </Project>

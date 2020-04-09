@@ -1,8 +1,7 @@
 namespace BSAF.Models
 {
 
-
-    public partial class Determination
+    public  class Determination
     {
         public int ID { get; set; }
 

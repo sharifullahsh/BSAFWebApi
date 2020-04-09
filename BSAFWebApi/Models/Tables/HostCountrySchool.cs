@@ -5,7 +5,7 @@ namespace BSAF.Models
 {
 
     [Table("HostCountrySchool")]
-    public partial class HostCountrySchool
+    public  class HostCountrySchool
     {
         public int ID { get; set; }
 

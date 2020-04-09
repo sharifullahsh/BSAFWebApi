@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace BSAF.Models
 {
 
-
     [Table("PSN")]
-    public partial class PSN
+    public class PSN
     {
         public int ID { get; set; }
 
