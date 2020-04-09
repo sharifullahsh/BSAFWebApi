@@ -12,6 +12,8 @@ namespace BSAFWebApi.Models.ViewModels
 
         public Guid GUID { get; set; }
 
+        public byte[] Photo { get; set; }
+
         public DateTime ScreeningDate { get; set; }
 
         public string ProvinceBCP { get; set; }

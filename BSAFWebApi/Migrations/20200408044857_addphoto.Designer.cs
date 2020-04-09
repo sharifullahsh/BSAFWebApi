@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BSAFWebApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200407105509_AddFieldtoIdentityAddRelationtoTable")]
-    partial class AddFieldtoIdentityAddRelationtoTable
+    [Migration("20200408044857_addphoto")]
+    partial class addphoto
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -112,6 +112,8 @@ namespace BSAFWebApi.Migrations
                     b.Property<string>("OriginVillage");
 
                     b.Property<bool?>("OwnHouse");
+
+                    b.Property<byte[]>("Photo");
 
                     b.Property<string>("ProfessionInHostCountry");
 

@@ -48,6 +48,7 @@ namespace BSAFWebApi.Controllers
                         var beneficiary = new Beneficiary
                         {
                             GUID = model.GUID,
+                            Photo = model.Photo,
                             ScreeningDate = model.ScreeningDate,
                             ProvinceBCP = model.ProvinceBCP,
                             BorderPoint = model.BorderPoint,

@@ -9,6 +9,8 @@ namespace BSAF.Models
 
         public Guid GUID { get; set; }
 
+        public byte[] Photo { get; set; }
+
         public DateTime ScreeningDate { get; set; }
 
         public string ProvinceBCP { get; set; }

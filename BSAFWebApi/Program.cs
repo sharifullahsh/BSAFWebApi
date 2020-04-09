@@ -30,7 +30,7 @@ namespace BSAFWebApi
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var roleManager = services.GetRequiredService<RoleManager<Role>>();
                     context.Database.Migrate();
-                    Seed.SeedUsers(userManager,roleManager);
+                    //Seed.SeedUsers(userManager,roleManager);
                 }catch(Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
